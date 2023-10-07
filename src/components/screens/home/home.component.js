@@ -1,4 +1,6 @@
 import { BaseScreen } from "@/core/component/base-screen.component";
+import renderService from "@/core/services/render.service";
+import template from "./home.template.html";
 
 export class Home extends BaseScreen{
 
@@ -6,7 +8,8 @@ export class Home extends BaseScreen{
         super({title: 'Home'})
     }
 
-    render(){
+    render() {
+        const element = renderService.htmlToElement(template)
         return '<p>Home</p>'
     }
 }
