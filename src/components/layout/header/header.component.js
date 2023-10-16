@@ -1,4 +1,3 @@
-import { BaseScreen } from "@/core/component/base-screen.component";
 import ChildComponent from '@/core/component/child.component';
 import renderService from "@/core/services/render.service";
 import template from "./header.template.html";

@@ -1,3 +1,4 @@
+import { Field } from "@/components/ui/field/field.component";
 import { BaseScreen } from "@/core/component/base-screen.component";
 import { $R } from '@/core/rquery/rquery.lib';
 import renderService from "@/core/services/render.service";
@@ -11,7 +12,14 @@ export class Home extends BaseScreen{
     }
 
     render() {
-        const element = renderService.htmlToElement(template, [], styles)
+        const element = renderService.htmlToElement(template, [
+            new Field({
+                name: 'Ramazan',
+                placeholder: 'Ramazan',
+                variant: 'green',
+                
+            })
+        ], styles)
 
         $R(element).find('h1').css('color', 'green')
 
