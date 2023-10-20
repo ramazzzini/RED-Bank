@@ -13,24 +13,7 @@ export class Home extends BaseScreen{
     }
 
     render() {
-        const element = renderService.htmlToElement(template, [
-            new Field({
-                name: 'Ramazan',
-                placeholder: 'Ramazan',
-                variant: 'green',
-            }),
-            new UserItem(
-                {
-                    avatarPath: 'https://avatars.mds.yandex.net/i?id=203303021d8cb730af39596756b0385afa2df88a-10681994-images-thumbs&n=13',
-                    name: 'Ramazan',
-                },
-                false, 
-                () => alert('hey')
-            )
-        ], 
-        styles)
-
-        $R(element).find('h1').css('color', 'green')
+        const element = renderService.htmlToElement(template, [], styles)
 
         return element
     }
