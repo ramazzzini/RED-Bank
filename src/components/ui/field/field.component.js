@@ -13,6 +13,7 @@ export class Field extends ChildComponent{
         this.placeholder = placeholder
         this.type = type
         this.value = value
+        this.name = name
         this.variant = variant
     }
     render() {

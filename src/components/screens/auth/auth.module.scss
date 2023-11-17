@@ -12,6 +12,9 @@
         margin: auto;
         display: flex;
         flex-direction: column;
+        input{
+            width: 100%;
+        }
 
         >h1 {
             text-align: center;
