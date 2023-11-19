@@ -17,6 +17,11 @@ export class Header extends ChildComponent{
         this.store.addObserver(this)
 
         this.router = router
+
+        this.userItem = new UserItem({
+            avatarPath: '/',
+            name: 'Ramazan'
+        })
     }
 
     update() {
@@ -26,6 +31,7 @@ export class Header extends ChildComponent{
 
         if(this.user) {
             authSideElement.show()
+            this.userItem.update(this.user)
             this.router.navigate('/')
         } else {
             authSideElement.hide()
@@ -39,10 +45,7 @@ export class Header extends ChildComponent{
                 router: this.router
             }), 
             Search, 
-            new UserItem({
-                avatarPath: 'https://avatars.mds.yandex.net/i?id=203303021d8cb730af39596756b0385afa2df88a-10681994-images-thumbs&n=13',
-                    name: 'Ramazan'
-            }) 
+            this.userItem 
         ], styles)
 
         this.update()
