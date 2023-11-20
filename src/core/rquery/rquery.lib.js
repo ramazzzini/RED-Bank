@@ -39,6 +39,17 @@ class RQuery {
     }
 
 
+    /**
+     * Find all elements that match the specified selector within the selected element
+     * @param {string} selector - a CSS selector string to search for within the selected element
+     * @returns {RQuery} - An array of new RQuery inastances for the found elements
+     */
+    findAll(selector) {
+        const elements = this.element.querySelectorAll(selector)
+        return Array.from(elements).map(element => new RQuery(element))
+    }
+
+
 //INSERT
 
 

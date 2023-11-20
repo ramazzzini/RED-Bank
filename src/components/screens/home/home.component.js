@@ -1,10 +1,8 @@
-import { Field } from "@/components/ui/field/field.component";
-import { UserItem } from "@/components/ui/user-item/user-item.component";
 import { BaseScreen } from "@/core/component/base-screen.component";
-import { $R } from '@/core/rquery/rquery.lib';
 import renderService from "@/core/services/render.service";
 import styles from "./home.module.scss";
 import template from "./home.template.html";
+import { CardInfo } from "./card-info/card-info.component";
 
 export class Home extends BaseScreen{
 
@@ -13,7 +11,7 @@ export class Home extends BaseScreen{
     }
 
     render() {
-        const element = renderService.htmlToElement(template, [], styles)
+        const element = renderService.htmlToElement(template, [CardInfo], styles)
 
         return element
     }
