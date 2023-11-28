@@ -55,7 +55,7 @@ export class Store {
 	 * @param {Object} observer - The observer object to remove.
 	 */
     removeObserver(observer) {
-        this.observers.filter(obs => obs !== observer)
+        this.observers = this.observers.filter(obs => obs !== observer)
     }
 
     /**

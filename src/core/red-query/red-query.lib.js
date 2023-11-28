@@ -28,7 +28,7 @@ export async function redQuery({
     let isLoading = true, 
         error = null, 
         data = null
-    const uri = `${SERVER_URL}/api${path}`
+    const url = `${SERVER_URL}/api${path}`
 
     /* accesToken from LS */
     const accessToken = new StorageService().getItem(ACCESS_TOKEN_KEY);
@@ -50,7 +50,7 @@ export async function redQuery({
     }
 
     try {
-        const response = await fetch(uri, requestOptions)
+        const response = await fetch(url, requestOptions)
 
         if(response.ok){
             data = await response.json()
@@ -72,7 +72,7 @@ export async function redQuery({
     } catch (errorData) {
         const errorMessage = extractErrorMessage(errorData)
 
-        if (onError){
+        if (errorMessage){
             onError(errorMessage)
         }
     } finally {
