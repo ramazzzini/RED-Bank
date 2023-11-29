@@ -1,3 +1,5 @@
+import { formatCardNumberWithDashes } from "@/utils/format/format-card-number"
+
 /**
  *  Represents the RQuery class for working with DOM elements
  */
@@ -233,7 +235,7 @@ creditCardInput(){
         this.element.tagName.toLowerCase()!== 'input' ||
         this.element.type !== 'text'
     )
-    throw new Error ('Element must be an input with type "text"')
+        throw new Error ('Element must be an input with type "text"')
 
     this.element.addEventListener('input', event => {
         let value = event.target.value.replace(/[^0-9]/g, '')
